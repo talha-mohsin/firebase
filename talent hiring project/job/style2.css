@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+/* JOB CARDS */
+/* JOB CARDS CONTAINER */
+.jobCards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(350px, 1fr));
+    gap: 15px;
+    padding: 40px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont;
+    color: #eaeaea;
+    background-color: rgb(253, 233, 196);
+}
+
+/* SINGLE CARD */
+.jobCard {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    background: #0f0f0f;
+    padding: 18px;
+    border-radius: 16px;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.jobCard:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 70px rgba(255, 140, 0, 0.25);
+}
+
+/* HEADER */
+.jobCardHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.jobCardHeadRight {
+    text-align: center;
+    position: relative;
+}
+
+i,
+button {
+    cursor: pointer;
+}
+
+.jobCardHeadRight i {
+    color: #797878;
+    font-size: 20px;
+}
+
+/* COMPANY LOGO */
+.jobCardLogo {
+    width: 36px;
+    height: 36px;
+    background: #797878;
+    padding: 6px;
+    border-radius: 50%;
+}
+
+.jobCardLogo img {
+    width: 100%;
+}
+
+/* TEXT GROUPS */
+.company,
+.designation,
+.salary,
+.located,
+.views,
+.posted,
+.applied {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+/* HIGHLIGHT TEXT */
+.companyName {
+    color: orangered;
+}
+
+.designationName {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.salaryAmount {
+    font-weight: 700;
+    color: orangered;
+}
+
+/* ICONS */
+.jobCardIcons {
+    color: orangered;
+}
+
+/* FOOTER */
+.jobCardFoot {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255, 140, 0, 0.2);
+    padding-top: 12px;
+    font-size: 13px;
+}
+
+/* POSTED BY */
+.posted span {
+    color: #999;
+}
+
+.postedBy {
+    color: orangered;
+    font-weight: 600;
+    margin-left: 4px;
+}
+
+/* APPLIED */
+.applied {
+    background: rgba(255, 140, 0, 0.12);
+    padding: 6px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+    color: orangered;
+}
+
+/* CARD TOOLTIP */
+.jobCardTooltip {
+    display: none;
+    height: fit-content;
+    width: fit-content;
+    text-align: center;
+    background: #797878;
+    padding: 12px 7px;
+    border-radius: 5px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.jobCardTooltip hr {
+    border: 1px solid rgb(70, 69, 69);
+}
+
+.jobCardTooltip button {
+    background-color: transparent;
+    color: black;
+    font-weight: 500;
+    width: 100%;
+    border: transparent;
+}
+
+.jobCardTooltip button:hover {
+    background-color: #6b6a6a;
+}
+
+/* END CARD TOOLTIP */
+
+/* END JOB CARDS */
+
+@media screen and (max-width: 800px) {
+    .jobCards {
+        grid-template-columns: repeat(1, minmax(300px, 1fr));
+    }
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/logo.png">
+    <link rel="stylesheet" href="utility.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Talent Hub | Hire & Get Hired</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Talent Hub</h1>
+
+        <nav class="desktopNav">
+            <a href="index.html">Home</a>
+            <a href="./job/job.html">Jobs</a>
+            <a href="./profiles/profile.html">Hire Talent</a>
+            <a href="./auth/login.html" id="loginBtn">Login</a>
+            <div class="userDP">
+                <img src="./assets/joining/userProfile.png" alt="">
+            </div>
+        </nav>
+
+        <i class="fa-solid fa-bars" id="menuToggle"></i>
+    </header>
+
+    <!-- MOBILE SIDEBAR -->
+    <div class="responsiveNav" id="responsiveNav">
+        <a href="index.html">Home</a>
+        <a href="./job/job.html">Jobs</a>
+        <a href="./profiles/profile.html">Hire Talent</a>
+        <a href="./auth/login.html">Login</a>
+    </div>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Connecting <span>Talent</span> with <span>Opportunity</span></h2>
+            <p>Talent Hub is a modern job platform where companies hire skilled professionals and job seekers find the
+                right opportunities.</p>
+
+            <button class="btn btn-primary mainBtn" id="jobfindBtn">Apply</button>
+            <button class="btn btn-outline mainBtn" id="jobPostBtn">Hire</button>
+        </div>
+    </section>
+
+    <section class="features">
+        <h3>Why Choose Talent Hub?</h3>
+        <div class="feature-grid">
+            <div class="card">
+                <h4>For Job Seekers</h4>
+                <p>Apply to top companies, manage applications, and showcase your skills in one place.</p>
+            </div>
+            <div class="card">
+                <h4>For Employers</h4>
+                <p>Post jobs, review candidates, and hire the right talent faster and smarter.</p>
+            </div>
+            <div class="card">
+                <h4>Smart Matching</h4>
+                <p>Our platform helps connect the right talent with the right opportunity.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h3>Start Your Journey with Talent Hub</h3>
+        <p>Whether you're hiring or applying, Talent Hub is built for your success.</p>
+        <button class="btn btn-primary">Get Started</button>
+    </section>
+
+    <footer>
+        <p>© 2026 Talent Hub. All rights reserved.</p>
+    </footer>
+
+    <!-- clarityModal -->
+    <div class="clarityModal popupModal">
+        <span class="modalCrossBtn">
+            <i class="fa-solid fa-xmark"></i>
+        </span>
+        <h3 id="validateheading">Logout Successful</h3>
+        <span class="validateSign"><i class="fa-regular fa-circle-check" style="color: orangered;"></i></span>
+        <p id="validatemessage">
+            Your account has been logout!
+        </p>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebarTop">
+            <i id="sidebarClose" class="fa-regular fa-circle-xmark"></i>
+            <div class="profileImg">
+                <img src="./assets/joining/userProfile.png" alt="">
+            </div>
+            <p class="userName">Talha Mohsin</p>
+            <p class="email">talha@mail.com</p>
+        </div>
+        <div class="sidebarBottom">
+            <button href="#" id="logout">Logout <i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+    <script src="utility.js"></script>
+    <script src="https://kit.fontawesome.com/df5205f864.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

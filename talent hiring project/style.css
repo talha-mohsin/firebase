@@ -1,0 +1,290 @@
+        :root {
+            --primary: orangered;
+            --dark: #000;
+            --light: #fff;
+            --gray: #f4f4f4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            background: #000;
+            border-bottom: 1px solid #373737;
+            width: 100%;
+            position: fixed;
+            z-index: 10;
+        }
+
+        header h1 {
+            color: var(--primary);
+            font-size: 28px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .userDP {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            padding: 5px;
+            background-color: #fff;
+        }
+
+        .userDP:hover {
+            cursor: pointer;
+            background-color: orangered;
+        }
+
+        .userDP img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .userDP img:hover {
+            filter: invert(1);
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 8%;
+            background: linear-gradient(to right, #000, #111);
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-text h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero-text span {
+            color: var(--primary);
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #ddd;
+        }
+
+        .mainBtn {
+            width: 120px;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .features {
+            background: var(--gray);
+            color: #000;
+            padding: 60px 8%;
+            text-align: center;
+        }
+
+        .features h3 {
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #000;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .card p {
+            font-size: 15px;
+            color: #333;
+        }
+
+        .cta {
+            padding: 70px 8%;
+            text-align: center;
+            background: #000;
+        }
+
+        .cta h3 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+
+        footer {
+            background: #000;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            border-top: 1px solid #222;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            width: 20vw;
+            min-width: 160px;
+            background-color: #fff;
+            color: #000;
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 11;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #sidebarClose {
+            font-size: 25px;
+            position: absolute;
+            right: 10px;
+            color: gray;
+        }
+
+        #sidebarClose:hover {
+            cursor: pointer;
+            color: #000;
+        }
+
+        .profileImg {
+            height: 75px;
+            width: 75px;
+            margin: auto;
+            background-color: rgb(240, 239, 239);
+            border-radius: 50%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .profileImg img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .userName {
+            color: orangered;
+        }
+
+        .email {
+            color: gray;
+            font-size: 13px;
+        }
+
+        #logout {
+            background-color: orangered;
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 3px;
+        }
+
+        #logout:hover {
+            background-color: rgb(226, 61, 1);
+            cursor: pointer;
+        }
+
+        /* END SIDEBAR */
+
+        /* POP MODAL */
+        .popupModal {
+            top: 0px;
+            z-index: 12;
+            transform: translate(50%, 50%);
+        }
+
+        /* END POP MODAL */
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text h2 {
+                font-size: 36px;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                display: none;
+            }
+        }

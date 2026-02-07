@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Talent Hiring</title>
+    <link rel="shortcut icon" href="../assets/logo.png">
+    <link rel="stylesheet" href="../utility.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Login Account</h2>
+        <div class="form-group">
+            <input type="email" id="email" placeholder="Email" required>
+        </div>
+
+        <div class="form-group">
+            <input type="password" id="password" placeholder="Password" required>
+        </div>
+
+        <button type="submit" id="login">Log in</button>
+
+        <div class="fileLink">
+            Haven't Account! <a href="signup.html">Signup</a>
+        </div>
+    </div>
+
+    <div class="clarityModal">
+        <span class="modalCrossBtn">
+            <i class="fa-solid fa-xmark"></i>
+        </span>
+        <h3 id="validateheading">Login Successful</h3>
+        <span class="validateSign"><i class="fa-regular fa-circle-check" style="color: orangered;"></i></span>
+        <p id="validatemessage">
+            Your account has been loggedin successfully!
+        </p>
+    </div>
+
+    <script type="module" src="login.js"></script>
+    <script src="https://kit.fontawesome.com/df5205f864.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

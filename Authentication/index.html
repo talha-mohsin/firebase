@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form | Firebase</title>
+    <link rel="shortcut icon"
+        href="https://uxwing.com/wp-content/themes/uxwing/download/editing-user-action/signup-icon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Create Account</h2>
+        <!-- <form action=""> -->
+        <div class="form-group">
+            <input type="text" id="firstName" placeholder="First Name" required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" id="lastName" placeholder="Last Name" required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" id="username" placeholder="Username" required>
+        </div>
+
+        <div class="form-group">
+            <p id="emailCheck"></p>
+            <input type="email" id="email" placeholder="Email" required>
+        </div>
+
+        <div class="form-group">
+            <input type="password" id="password" placeholder="Password" required>
+        </div>
+
+        <button type="submit" id="signup">Sign up</button>
+        <br><br>
+        <button id="getSingleData">Get Single Data</button>
+        <br><br>
+        <button id="getAllData">Get All Data</button>
+
+        <div class="fileLink">
+            Already have an account! <a href="login.html">Login</a>
+        </div>
+        <!-- </form> --> 
+    </div>
+
+    <div class="joining">
+        <h3>Account Created Successfully</h3>
+        <span class="joiningRing">✔</span>
+        <p>
+            Your account has been created. Please log in to continue.
+            <a href="login.html">Log in</a>
+        </p>
+    </div>
+
+
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>

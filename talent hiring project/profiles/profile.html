@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/logo.png">
+    <link rel="stylesheet" href="../utility.css">
+    <title>Top Talent | Hiring Hub</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+    
+    <!-- UI -->
+  <section class="talent-page">
+
+    <div class="talent-header">
+      <h2>Top Talent Profiles</h2>
+      <p>Discover skilled professionals ready to work with you</p>
+    </div>
+
+    <div class="talent-grid">
+
+      <div class="talent-card">
+        <div class="talent-img">
+          <img src="../assets/joining/userProfile.png" alt="Talent" />
+        </div>
+        <h3 class="talent-name">Talha Mohsin</h3>
+        <p class="talent-role">Frontend Developer</p>
+        <div class="talent-skills">
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">React</span>
+        </div>
+        <div class="talent-actions">
+          <button class="view-btn">View Profile</button>
+          <button class="hire-btn">Hire</button>
+        </div>
+      </div>
+
+
+    </div>
+
+  </section>
+    <!-- End UI -->
+
+    <!-- inputModal -->
+    <div class="inputModalBg">
+        <div class="inputModal">
+            <div class="inputModalHead">
+                <h2 class="inputModalHeading">Upload Your Job</h2>
+                <span class="inputModalClose"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+            <div class="inputModalBody">
+                <h5>Job Title:</h5>
+                <input class="inputs" type="text" placeholder="Job designation" id="jobTitle">
+
+                <h5>Job Salary:</h5>
+                <input class="inputs" type="text" placeholder="Job salary" id="jobSalary">
+
+                <h5>Job Location:</h5>
+                <input class="inputs" placeholder="Job location" id="jobLocation"></input>
+
+                <h5>Company Name:</h5>
+                <input class="inputs" type="text" placeholder="company" id="companyName">
+
+                <h5>Posted by:</h5>
+                <input class="inputs" type="text" placeholder="Posted by" id="postedBy">
+            </div>
+            <div class="inputModalFoot">
+                <button type="button" class="orangeBtn" id="jobPublish">Job Publish</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="profile.js"></script>
+    <script src="../utility.js"></script>
+</body>
+
+</html>

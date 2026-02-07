@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs Search | Talent Hub</title>
+    <link rel="shortcut icon" href="../assets/logo.png">
+    <link rel="stylesheet" href="../utility.css">
+    <link rel="stylesheet" href="style2.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: orangered;
+            --light: #fff;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: #000;
+            border-bottom: 1px solid #222;
+        }
+
+        header h1 {
+            color: var(--primary);
+            font-size: 28px;
+        }
+
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Talent Hub</h1>
+
+        <nav class="desktopNav">
+            <a href="index.html">Home</a>
+            <a href="./job/job.html">Jobs</a>
+            <a href="./profiles/profile.html">Hire Talent</a>
+            <a href="./auth/login.html" id="loginBtn">Login</a>
+            <div class="userDP">
+                <img src="../assets/joining/userProfile.png" alt="">
+            </div>
+        </nav>
+        <i class="fa-solid fa-bars" id="menuToggle"></i>
+    </header>
+
+    <!-- MOBILE SIDEBAR -->
+    <div class="responsiveNav" id="responsiveNav">
+        <a href="index.html">Home</a>
+        <a href="./job/job.html">Jobs</a>
+        <a href="./profiles/profile.html">Hire Talent</a>
+        <a href="./auth/login.html">Login</a>
+    </div>
+
+    <div class="jobCards">
+
+    </div>
+
+    <!-- inputModal -->
+    <div class="inputModalBg" style="display: flex;">
+        <div class="inputModal">
+            <div class="inputModalHead">
+                <h2 class="inputModalHeading">Add your profile details</h2>
+                <span class="inputModalClose"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+            <div class="inputModalBody">
+
+                <input class="inputs" type="text" placeholder="Fullname" id="employeeName">
+
+                <input class="inputs" type="text" placeholder="Email Address" id="employeeEmail">
+
+                <input class="inputs" type="text" placeholder="Experience" id="employeeExperience">
+
+                <textarea class="inputs aboutSec" rows="5" placeholder="About me" id="aboutEmployee"></textarea>
+
+                <input class="imgFile" type="file" id="employeeImg">
+
+            </div>
+            <div class="inputModalFoot">
+                <button type="button" class="orangeBtn" id="addedBtn">Added</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="job.js"></script>
+    <script src="../utility.js"></script>
+    <script src="https://kit.fontawesome.com/df5205f864.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

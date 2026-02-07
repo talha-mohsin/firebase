@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up | Talent Hiring</title>
+    <link rel="shortcut icon" href="../assets/logo.png">
+    <link rel="stylesheet" href="../utility.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Create Account</h2>
+        <div class="form-group">
+            <input type="text" id="username" placeholder="Username" pattern="[A-Za-z]+" required>
+        </div>
+
+        <div class="form-group">
+            <p id="emailCheck"></p>
+            <input type="email" id="email" placeholder="Email" required>
+        </div>
+
+        <div class="form-group">
+            <input type="password" id="password" placeholder="Password" required>
+        </div>
+
+        <button type="submit" id="signup">Sign up</button>
+
+        <div class="fileLink">
+            Already have an account! <a href="login.html">Login</a>
+        </div>
+    </div>
+
+    <div class="clarityModal">
+        <span class="modalCrossBtn">
+            <i class="fa-solid fa-xmark"></i>
+        </span>
+        <h3 id="validateheading">Account Created Successfully</h3>
+        <span class="validateSign"><i class="fa-regular fa-circle-check" style="color: #4ade80;"></i></span>
+        <p id="validatemessage">
+            Your account has been created. Please log in to continue.
+            <a href="login.html">Log in</a>
+        </p>
+    </div>
+
+
+    <script type="module" src="signup.js"></script>
+    <script src="https://kit.fontawesome.com/df5205f864.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
