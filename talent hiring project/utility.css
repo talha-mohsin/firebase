@@ -5,47 +5,70 @@
 }
 
 /* NAVBAR */
+
+.userDP {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: #fff;
+}
+
+.userDP:hover {
+    cursor: pointer;
+    background-color: orangered;
+}
+
+.userDP img {
+    height: 100%;
+    width: 100%;
+}
+
+.userDP img:hover {
+    filter: invert(1);
+}
+
 /* Desktop nav */
 .desktopNav {
-  display: flex;
-  gap: 25px;
-  align-items: center;
+    display: flex;
+    gap: 25px;
+    align-items: center;
 }
 
 /* Hamburger */
 #menuToggle {
-  display: none;
-  font-size: 22px;
-  color: white;
-  cursor: pointer;
+    display: none;
+    font-size: 22px;
+    color: white;
+    cursor: pointer;
 }
 
 /* Mobile sidebar (bottom sheet style) */
 .responsiveNav {
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 40%;
-  height: 100vh;
-  background: #111;
-  padding: 25px;
-  box-shadow: 0 -10px 30px rgba(0,0,0,0.6);
-  z-index: 9999;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100vh;
+    background: #111;
+    padding: 25px;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.6);
+    z-index: 9999;
 
-  flex-direction: column;
-  gap: 18px;
-  text-align: center;
+    flex-direction: column;
+    gap: 18px;
+    text-align: center;
 }
 
 .responsiveNav a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
 }
 
 .responsiveNav a:hover {
-  color: orangered;
+    color: orangered;
 }
 
 /* END NAVBAR */
@@ -220,15 +243,15 @@
 
 /* -------- Mobile Styles -------- */
 @media (max-width: 768px) {
-  .desktopNav {
-    display: none;
-  }
+    .desktopNav {
+        display: none;
+    }
 
-  #menuToggle {
-    display: block;
-  }
+    #menuToggle {
+        display: block;
+    }
 
-  .responsiveNav.active {
-    display: flex;
-  }
+    .responsiveNav.active {
+        display: flex;
+    }
 }

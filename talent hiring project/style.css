@@ -52,28 +52,6 @@
             color: var(--primary);
         }
 
-        .userDP {
-            height: 30px;
-            width: 30px;
-            border-radius: 50%;
-            padding: 5px;
-            background-color: #fff;
-        }
-
-        .userDP:hover {
-            cursor: pointer;
-            background-color: orangered;
-        }
-
-        .userDP img {
-            height: 100%;
-            width: 100%;
-        }
-
-        .userDP img:hover {
-            filter: invert(1);
-        }
-
         .hero {
             display: flex;
             align-items: center;

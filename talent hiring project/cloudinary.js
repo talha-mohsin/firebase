@@ -1,7 +1,3 @@
-const apiKey = '225279491945164';
-const apiSecret = 'YKuoA3l57VXLCTwQkltJVeQufKw';
-const cloudName = 'dmur7yayw';
-
 const url = 'https://api.cloudinary.com/v1_1/dmur7yayw/image/upload';
     
 export function uploadImg(formData) {
@@ -13,10 +9,11 @@ export function uploadImg(formData) {
         body: formData,
     })
         .then((response) => {
-            return response.text();
+            console.log(response)
+            return response.json();
         })
         .then((data) => {
-            document.getElementById('data').innerHTML += data;
+            console.log(data);
         })
         .catch(err => {
             console.log(err, '==>> error is happening!');
