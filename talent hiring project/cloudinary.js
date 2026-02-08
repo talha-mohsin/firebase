@@ -1,4 +1,4 @@
-const url = 'https://api.cloudinary.com/v1_1/dmur7yayw/image/upload';
+
     
 export function uploadImg(formData) {
 
