@@ -1,9 +1,10 @@
 import { handleProtectedAction, logoutUser, toGetloggedinUser } from "./firebase.js"
+console.log(`hellooooooooooooooo`)
+console.log(`hellooooooooooooooo`)
 
-let user = await toGetloggedinUser();
 
-const jobPostBtn = document.querySelector('#jobPostBtn')
-const jobfindBtn = document.querySelector('#jobfindBtn')
+const hireBtn = document.querySelector('#hireBtn')
+const applyBtn = document.querySelector('#applyBtn')
 const logout = document.querySelector('#logout');
 const clarityModal = document.querySelector('.clarityModal')
 const sidebar = document.querySelector('.sidebar')
@@ -14,20 +15,14 @@ const userName = document.querySelector('.userName')
 const email = document.querySelector('.email')
 const profileImg = document.querySelector('.profileImg')
 
-// userDP.innerHTML = user.email[0].toUpperCase();
 
-jobPostBtn.addEventListener('click', () => {
+hireBtn.addEventListener('click', () => {
     handleProtectedAction('./profiles/profile.html')
-    jobModalBg.style.display = 'flex'
-
 })
 
-jobfindBtn.addEventListener('click', () => {
+applyBtn.addEventListener('click', () => {
     handleProtectedAction('./job/job.html')
 })
-
-
-
 
 logout.addEventListener('click', () => {
     logoutUser()
@@ -46,7 +41,9 @@ sidebarClose.addEventListener('click', () => {
     sidebar.style.display = 'none';
 })
 
-userDP.addEventListener('click', () => {
+userDP.addEventListener('click', async () => {
+
+    let user = await toGetloggedinUser();
 
     if (!user) {
         return console.log(`You are not register!`)

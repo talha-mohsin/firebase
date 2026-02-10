@@ -87,8 +87,8 @@ function toGetloggedinUser() {
             } else {
                 // User is signed out
                 // ...
-                // window.location = '../login.html';
-                // reject('login required!');
+                window.location = './auth/login.html';
+                reject('login required!');
             }
         });
     })
@@ -114,6 +114,7 @@ function handleProtectedAction(destination) {
   onAuthStateChanged(auth, (user) => {
     if (!user) {
       window.location = './auth/login.html'
+      console.log('user should be loggedin!');
     } else {
       window.location = destination;
     }
@@ -141,8 +142,8 @@ function logoutUser() {
 }
 
 
-// <<<<<<<<<<<---------- Set a single job data --------->>>>>>>>>>>
-async function setjobFunc(bucket, jobObj) {
+// <<<<<<<<<<<---------- Set a single data --------->>>>>>>>>>>
+async function setDataFunc(bucket, jobObj) {
     let jobId = crypto.randomUUID();
 
     console.log(bucket, '==>> bucket');
@@ -182,4 +183,4 @@ async function getjobsFunc(bucket) {
 
 }
 
-export { signupUserFunc, loginUserFunc, toGetloggedinUser, requireAuth, handleProtectedAction, logoutUser, setjobFunc, getjobsFunc } 
+export { signupUserFunc, loginUserFunc, toGetloggedinUser, requireAuth, handleProtectedAction, logoutUser, setDataFunc, getjobsFunc } 

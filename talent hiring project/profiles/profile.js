@@ -1,4 +1,4 @@
-import { requireAuth, setjobFunc, toGetloggedinUser } from "../firebase.js";
+import { requireAuth, setDataFunc, toGetloggedinUser } from "../firebase.js";
 
 // toGetloggedinUser();
 requireAuth().then((user) => {
@@ -36,7 +36,7 @@ jobPublish.addEventListener('click', () => {
     const obj = new JobObjConstructor(jobTitle.value, jobSalary.value, jobLocation.value, companyName.value, postedBy.value)
     const jobObj = { ...obj }
 
-    setjobFunc("jobs", jobObj);
+    setDataFunc("jobs", jobObj);
     jobTitle.value = '';
     jobSalary.value = '';
     jobLocation.value = '';

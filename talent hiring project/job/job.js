@@ -1,5 +1,5 @@
 import { uploadImg } from "../cloudinary.js";
-import { getjobsFunc, logoutUser, requireAuth, setjobFunc, toGetloggedinUser } from "../firebase.js";
+import { getjobsFunc, logoutUser, requireAuth, setDataFunc, toGetloggedinUser } from "../firebase.js";
 
 // toGetloggedinUser();
 requireAuth().then((user) => {
@@ -125,46 +125,44 @@ const aboutEmployee = document.querySelector('#aboutEmployee');
 const employeeImg = document.querySelector('#employeeImg');
 const addedBtn = document.querySelector('#addedBtn');
 
-// job details object constructor By using OOP
-class JobObjConstructor {
-    constructor(jobTitle, jobSalary, jobLocation, companyName, postedBy) {
-        this.jobTitle = jobTitle;
-        this.jobSalary = jobSalary;
-        this.jobLocation = jobLocation;
-        this.companyName = companyName;
-        this.postedBy = postedBy;
+// profile details object constructor By using OOP
+class profileObjConstructor {
+    constructor(employeeName, employeeEmail, employeeExperience, aboutEmployee, emplImgUrl) {
+        this.employeeName = employeeName;
+        this.employeeEmail = employeeEmail;
+        this.employeeExperience = employeeExperience;
+        this.aboutEmployee = aboutEmployee;
+        this.emplImgUrl = emplImgUrl;
         // this.time = 
     }
 }
     // console.log(new Date().toISOString());
 
 
-addedBtn.addEventListener('click', () => {
+addedBtn.addEventListener('click', async () => {
 
-    // if (!employeeName.value || !employeeEmail.value || !employeeExperience.value || !aboutEmployee.value || !employeeImg.files) return alert('All fields must be filled!')
+    if (!employeeName.value || !employeeEmail.value || !employeeExperience.value || !aboutEmployee.value || !employeeImg.files) return alert('All fields must be filled!')
     console.log(employeeImg.files[0])
 
-    // cloudinary Code --------->>>
-
+    // cloudinary logic
     const formData = new FormData();
     formData.append('file', employeeImg.files[0]);
     formData.append('upload_preset', 'projects');
 
-    uploadImg(formData);
+    let emplImgUrl = await uploadImg(formData);
+    console.log(emplImgUrl, '==>> emplImgUrl');
 
-    // End cloudinary Code --------->>>
+    const obj = new profileObjConstructor(employeeName.value, employeeEmail.value, employeeExperience.value, aboutEmployee.value, emplImgUrl)
+    const profileObj = { ...obj }
+    console.log(profileObj)
 
-    return;
 
-    const obj = new JobObjConstructor(employeeName.value, employeeEmail.value, employeeExperience.value, aboutEmployee.value, employeeImg.files)
-    const jobObj = { ...obj }
-
-    setjobFunc("jobs", jobObj);
-    jobTitle.value = '';
-    jobSalary.value = '';
-    jobLocation.value = '';
-    companyName.value = '';
-    postedBy.value = '';
+    setDataFunc("profiles", profileObj);
+    employeeName.value = '';
+    employeeEmail.value = '';
+    employeeExperience.value = '';
+    aboutEmployee.value = '';
+    employeeImg.files = '';
 
     window.location = './profiles/profile.html';
 })
@@ -173,4 +171,4 @@ document.querySelector('.inputModalClose').addEventListener('click', () => {
     inputModalBg.style.display = 'none';
 })
 
-// END JOB MODAL LOGICS
+// END PROFILE MODAL LOGICS
