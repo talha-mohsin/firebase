@@ -1,4 +1,4 @@
-import { requireAuth, setDataFunc, toGetloggedinUser } from "../firebase.js";
+import { getDataFunc, requireAuth, setDataFunc, toGetloggedinUser } from "../firebase.js";
 
 // toGetloggedinUser();
 requireAuth().then((user) => {
@@ -13,6 +13,36 @@ const jobLocation = document.querySelector('#jobLocation');
 const companyName = document.querySelector('#companyName');
 const postedBy = document.querySelector('#postedBy');
 const jobPublish = document.querySelector('#jobPublish');
+
+async function cardsUI() {
+  let profilesData = await getDataFunc("profiles")
+  console.log(profilesData, '=>> profileData');
+
+  let profileHTML = profilesData.map(profile => {
+    employeeName, employeeEmail, employeeExperience, aboutEmployee, emplImgUrl
+    // return `<div class="talent-card">
+    //     <div class="talent-img">
+    //       <img src="${profile.emplImgUrl}" alt="Talent" />
+    //     </div>
+    //     <h3 class="talent-name">${profile.employeeName}</h3>
+    //     <p class="talent-role">${}</p>
+    //     <div class="talent-skills">
+    //       <span class="skill">HTML</span>
+    //       <span class="skill">CSS</span>
+    //       <span class="skill">JavaScript</span>
+    //       <span class="skill">React</span>
+    //     </div>
+    //     <div class="talent-actions">
+    //       <button class="view-btn">View Profile</button>
+    //       <button class="hire-btn">Hire</button>
+    //     </div>
+    //   </div>`
+  })
+
+    
+}
+
+// cardsUI();
 
 // job details object constructor By using OOP
 class JobObjConstructor {

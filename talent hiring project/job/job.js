@@ -1,10 +1,8 @@
 import { uploadImg } from "../cloudinary.js";
-import { getjobsFunc, logoutUser, requireAuth, setDataFunc, toGetloggedinUser } from "../firebase.js";
+import { getDataFunc, logoutUser, requireAuth, setDataFunc, toGetloggedinUser } from "../firebase.js";
 
 // toGetloggedinUser();
-requireAuth().then((user) => {
-    console.log('Authorized:', user.email);
-});
+requireAuth();
 
 
 let jobCards = document.querySelector('.jobCards');
@@ -12,7 +10,7 @@ let jobCards = document.querySelector('.jobCards');
 let jobsDB;
 
 try {
-    jobsDB = await getjobsFunc('jobs');
+    jobsDB = await getDataFunc('jobs');
     console.log(jobsDB);
 
 } catch (error) {
@@ -117,58 +115,61 @@ jobCardsRemove.forEach((jobCardRemove, i) => {
 // })
 
 // INPUT MODAL LOGICS
-const inputModalBg = document.querySelector('.inputModalBg')
-const employeeName = document.querySelector('#employeeName');
-const employeeEmail = document.querySelector('#employeeEmail');
-const employeeExperience = document.querySelector('#employeeExperience');
-const aboutEmployee = document.querySelector('#aboutEmployee');
-const employeeImg = document.querySelector('#employeeImg');
-const addedBtn = document.querySelector('#addedBtn');
+const form = document.getElementById("talentForm");
 
-// profile details object constructor By using OOP
-class profileObjConstructor {
-    constructor(employeeName, employeeEmail, employeeExperience, aboutEmployee, emplImgUrl) {
-        this.employeeName = employeeName;
-        this.employeeEmail = employeeEmail;
-        this.employeeExperience = employeeExperience;
-        this.aboutEmployee = aboutEmployee;
-        this.emplImgUrl = emplImgUrl;
-        // this.time = 
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const talentImg = document.getElementById("talentImg").files[0];
+    const talentName = document.getElementById("talentName").value.trim();
+    const talentRole = document.getElementById("talentRole").value.trim();
+    const talentSkills = document.getElementById("talentSkills").value;
+    const talentBio = document.getElementById("talentBio").value.trim();
+
+    if (!talentImg || !talentName || !talentRole || !talentSkills || !talentBio) {
+        return alert("All fields are required");
     }
-}
-    // console.log(new Date().toISOString());
 
+    try {
+        /* 1 Upload image to Cloudinary */
+        const formData = new FormData();
+        formData.append("file", talentImg);
+        formData.append("upload_preset", "projects");
 
-addedBtn.addEventListener('click', async () => {
+        const imageURL = await uploadImg(formData);
 
-    if (!employeeName.value || !employeeEmail.value || !employeeExperience.value || !aboutEmployee.value || !employeeImg.files) return alert('All fields must be filled!')
-    console.log(employeeImg.files[0])
+        /* 2 Convert skills to array */
+        const skillsArray = talentSkills
+            .split(",")
+            .map(skill => skill.trim())
+            .filter(Boolean);
 
-    // cloudinary logic
-    const formData = new FormData();
-    formData.append('file', employeeImg.files[0]);
-    formData.append('upload_preset', 'projects');
+        /* 3 Create profile object */
+        const profileData = {
+            name: talentName,
+            role: talentRole,
+            skills: skillsArray,
+            bio: talentBio,
+            image: imageURL,
+            createdAt: new Date().toISOString()
+        };
+        
+        console.log(profileData, '==>> profileData');
 
-    let emplImgUrl = await uploadImg(formData);
-    console.log(emplImgUrl, '==>> emplImgUrl');
+        /* 4 Save to Firestore */ 
+        await setDataFunc("profiles", profileData);
 
-    const obj = new profileObjConstructor(employeeName.value, employeeEmail.value, employeeExperience.value, aboutEmployee.value, emplImgUrl)
-    const profileObj = { ...obj }
-    console.log(profileObj)
+        alert("Profile saved successfully!");
+        form.reset();
 
+    } catch (error) {
+        console.error("Profile save error:", error);
+        alert("Something went wrong");
+    }
+});
 
-    setDataFunc("profiles", profileObj);
-    employeeName.value = '';
-    employeeEmail.value = '';
-    employeeExperience.value = '';
-    aboutEmployee.value = '';
-    employeeImg.files = '';
-
-    window.location = './profiles/profile.html';
-})
-
-document.querySelector('.inputModalClose').addEventListener('click', () => {
-    inputModalBg.style.display = 'none';
+document.querySelector('.crossBtn').addEventListener('click', () => {
+    document.querySelector('.talentFormBg').style.display = 'none';
 })
 
 // END PROFILE MODAL LOGICS

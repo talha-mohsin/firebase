@@ -159,12 +159,12 @@ async function setDataFunc(bucket, jobObj) {
 }
 
 
-// <<<<<<<<<<<---------- Get jobs data --------->>>>>>>>>>>
-async function getjobsFunc(bucket) {
+// <<<<<<<<<<<---------- Get data --------->>>>>>>>>>>
+async function getDataFunc(bucket) {
 
     try {
 
-        const jobsArr = [];
+        const dataArr = [];
         const q = query(collection(db, bucket));
 
         const querySnapshot = await getDocs(q);
@@ -172,9 +172,9 @@ async function getjobsFunc(bucket) {
         querySnapshot.forEach((doc) => {
             // doc.data() is never undefined for query doc snapshots
             console.log(doc.id, " => ", doc.data());
-            jobsArr.push({ ...doc.data(), id: doc.id });
+            dataArr.push({ ...doc.data(), id: doc.id });
         });
-        return jobsArr;
+        return dataArr;
 
     } catch (error) {
         console.log(error, '==>>> Error is happening for get jobs!!!')
@@ -183,4 +183,4 @@ async function getjobsFunc(bucket) {
 
 }
 
-export { signupUserFunc, loginUserFunc, toGetloggedinUser, requireAuth, handleProtectedAction, logoutUser, setDataFunc, getjobsFunc } 
+export { signupUserFunc, loginUserFunc, toGetloggedinUser, requireAuth, handleProtectedAction, logoutUser, setDataFunc, getDataFunc } 

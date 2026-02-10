@@ -8,43 +8,6 @@
     <link rel="shortcut icon" href="../assets/logo.png">
     <link rel="stylesheet" href="../utility.css">
     <link rel="stylesheet" href="style2.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: orangered;
-            --light: #fff;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            background: #000;
-            border-bottom: 1px solid #222;
-        }
-
-        header h1 {
-            color: var(--primary);
-            font-size: 28px;
-        }
-
-        nav a {
-            color: var(--light);
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 16px;
-        }
-
-        nav a:hover {
-            color: var(--primary);
-        }
-    </style>
 </head>
 
 <body>
@@ -77,29 +40,45 @@
     </div>
 
     <!-- inputModal -->
-    <div class="inputModalBg" style="display: flex;">
-        <div class="inputModal">
-            <div class="inputModalHead">
-                <h2 class="inputModalHeading">Add your profile details</h2>
-                <span class="inputModalClose"><i class="fa-solid fa-xmark"></i></span>
+    <div class="talentFormBg">
+        <form class="talentForm" id="talentForm">
+            <span class="crossBtn">
+                <i class="fa-solid fa-xmark"></i>
+            </span>
+            <!-- Full Name -->
+            <div class="formGroup">
+                <label>Full Name</label>
+                <input type="text" id="talentName" placeholder="Enter your name" required />
             </div>
-            <div class="inputModalBody">
 
-                <input class="inputs" type="text" placeholder="Fullname" id="employeeName">
-
-                <input class="inputs" type="text" placeholder="Email Address" id="employeeEmail">
-
-                <input class="inputs" type="text" placeholder="Experience" id="employeeExperience">
-
-                <textarea class="inputs aboutSec" rows="5" placeholder="About me" id="aboutEmployee"></textarea>
-
-                <input class="imgFile" type="file" id="employeeImg">
-
+            <!-- Role -->
+            <div class="formGroup">
+                <label>Professional Role</label>
+                <input type="text" id="talentRole" placeholder="Frontend Developer" required />
             </div>
-            <div class="inputModalFoot">
-                <button type="button" class="orangeBtn" id="addedBtn">Added</button>
+
+            <!-- Skills -->
+            <div class="formGroup">
+                <label>Skills (comma separated)</label>
+                <input type="text" id="talentSkills" placeholder="HTML, CSS, JavaScript, React" required />
             </div>
-        </div>
+
+            <!-- Bio -->
+            <div class="formGroup">
+                <label>Short Bio</label>
+                <textarea id="talentBio" rows="4" placeholder="Tell something about yourself..." required></textarea>
+            </div>
+
+            <!-- Profile Image -->
+            <div class="formGroup">
+                <label>Profile Image</label>
+                <input type="file" id="talentImg" accept="image/*" required />
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="submitBtn">Save Profile</button>
+
+        </form>
     </div>
 
     <script type="module" src="job.js"></script>

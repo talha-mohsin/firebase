@@ -92,7 +92,7 @@
     color: #f1f1f1;
 }
 
-.fa-xmark {
+/* .fa-xmark {
     color: #f1f1f1;
     font-size: 30px;
     position: absolute;
@@ -103,7 +103,7 @@
 .fa-xmark:hover {
     color: #828282;
     cursor: pointer;
-}
+} */
 
 .clarityModal h3 {
     color: #f1f1f1;

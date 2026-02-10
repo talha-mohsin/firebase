@@ -9,6 +9,42 @@
     font-size: 14px;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: orangered;
+    --light: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #000;
+    border-bottom: 1px solid #222;
+}
+
+header h1 {
+    color: var(--primary);
+    font-size: 28px;
+}
+
+nav a {
+    color: var(--light);
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
 /* JOB CARDS */
 /* JOB CARDS CONTAINER */
 .jobCards {
@@ -169,6 +205,77 @@ button {
 /* END CARD TOOLTIP */
 
 /* END JOB CARDS */
+
+/* modal for getting profile details */
+.talentFormBg {
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.73);
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.talentForm {
+    min-width: 300px;
+    max-width: 550px;
+    width: 50vw;
+    background: #111;
+    padding: 25px;
+    border-radius: 10px;
+    color: #fff;
+    position: absolute;
+    box-shadow: 0 0 25px gray;
+}
+
+.crossBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+}
+
+.crossBtn i {
+  color: white;   
+  font-size: 30px;
+}
+
+.formGroup {
+    margin-bottom: 15px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.formGroup input,
+.formGroup textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+
+.submitBtn {
+    width: 100%;
+    padding: 12px;
+    background: orangered;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.submitBtn:hover {
+    background: #ff5722;
+}
+
+/* end modal for getting profile details */
 
 @media screen and (max-width: 800px) {
     .jobCards {
