@@ -29,6 +29,7 @@
 .talent-card {
     background: #141414;
     border-radius: 12px;
+    max-width: 500px;
     padding: 25px;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -127,3 +128,69 @@
         font-size: 30px;
     }
 }
+
+/* PROFILE VIEW STYLE */
+.profileModalBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.profileModal {
+  background: #111;
+  width: 400px;
+  max-width: 90%;
+  padding: 25px;
+  border-radius: 10px;
+  position: relative;
+  color: white;
+}
+
+.profileClose {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 20px;
+  color: orangered;
+}
+
+.profileModalTop {
+  text-align: center;
+}
+
+.profileModalTop img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profileModalTop h2 {
+  margin: 5px 0;
+}
+
+.profileModalTop p {
+  color: orangered;
+}
+
+.modalSkills {
+  margin: 10px 0;
+}
+
+.modalSkills span {
+  background: orangered;
+  padding: 6px 10px;
+  border-radius: 20px;
+  margin: 4px;
+  display: inline-block;
+}
+
+/* END PROFILE VIEW STYLE */

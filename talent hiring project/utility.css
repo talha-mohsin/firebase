@@ -92,7 +92,7 @@
     color: #f1f1f1;
 }
 
-/* .fa-xmark {
+.crossBTN {
     color: #f1f1f1;
     font-size: 30px;
     position: absolute;
@@ -100,10 +100,10 @@
     top: 15px;
 }
 
-.fa-xmark:hover {
+.crossBTN:hover {
     color: #828282;
     cursor: pointer;
-} */
+}
 
 .clarityModal h3 {
     color: #f1f1f1;

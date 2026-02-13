@@ -1,7 +1,4 @@
 import { handleProtectedAction, logoutUser, toGetloggedinUser } from "./firebase.js"
-console.log(`hellooooooooooooooo`)
-console.log(`hellooooooooooooooo`)
-
 
 const hireBtn = document.querySelector('#hireBtn')
 const applyBtn = document.querySelector('#applyBtn')
